@@ -1,0 +1,131 @@
+page{ 
+  height: 100%; 
+  background: #F5F5F5;
+ } 
+  
+ .container { 
+  /* height: 100%;  */
+  margin-top: 130rpx;
+  display: flex; 
+  flex-direction: column; 
+  padding: 0; 
+  box-sizing: border-box; 
+  /* background-color: rgb(156, 23, 78) */
+ } 
+  
+ /*登录图片*/
+ .login-icon{ 
+  /* flex: none;  */
+  width: 100%;
+  height: 500rpx;
+  background-color: #52B1FA;
+ } 
+  
+ .login-img{ 
+  width: 750rpx;
+ } 
+  
+ /*表单内容*/
+ .login-from { 
+  margin-top: 20px; 
+  flex: auto; 
+  height:100%; 
+ } 
+  
+ .inputView { 
+  /* background-color: #fff;  */
+  width: 480rpx;
+  height: 100rpx;
+  margin-bottom: 40rpx;
+  border-radius:11px;
+  border:1px solid #CCCCCC;
+  background: #fff;
+ } 
+ /* 抬头 */
+ .names{
+  width:25%;
+  height:100rpx;
+  line-height: 100rpx;
+  letter-spacing:10rpx;
+  font-weight: 600;
+  color:#666666;
+  font-size:38rpx;
+ }
+ .names1{
+    display:flex;
+ }
+  
+ /*输入框*/
+ .nameImage, .keyImage { 
+  margin-left: 22px; 
+  width: 18px; 
+  height: 16px
+ } 
+  
+ .loginLab { 
+  margin: 15px 15px 15px 10px; 
+  color: #545454; 
+  font-size: 32rpx
+ } 
+  
+ .inputText { 
+  flex: block; 
+  height: 100%;
+  color: #545454; 
+  font-size: 32rpx;
+  padding-left: 20rpx;
+ } 
+ .line { 
+  margin-top: 8px; 
+ } 
+  
+ /* .line { 
+  width: 100%; 
+  height: 1px; 
+  background-color: #cccccc; 
+  margin-top: 1px; 
+ }  */
+  
+ /*按钮*/
+ .loginBtnView { 
+  width: 100%;
+  background-color:#3290F4; 
+  /* margin-top: 0px; 
+  margin-bottom: 0px; 
+  padding-bottom: 0px;  */
+  border-radius:40rpx;
+ } 
+  
+ .loginBtn { 
+  width: 100%; 
+  margin-top: 40px; 
+  background-color:#3290F4;
+  color: white;
+  height: 100rpx;
+  line-height: 65rpx;
+  /* border-radius:10px; */
+ }
+
+
+
+ .area {
+  display: relative;
+  flex-direction: column;
+  align-items: center;
+  height: 550rpx;
+  line-height: 400rpx;
+  font-size: 55rpx;
+  color: white;
+  font-weight: 600;
+}
+.area::after{
+  content: '';
+  width: 120%;
+  height: 400rpx;
+  position: absolute;
+  z-index: -1;
+  left: -10%;
+  top: 0;
+  border-radius: 0 0 50% 50%;
+  background: #52B1FA;
+}

@@ -1,0 +1,68 @@
+<view style="{{all_roles[0] === '访客' ?'display:none':'display:block'}}">
+
+  <view class="containers">
+
+  <!-- 项目 -->
+  <view class="select-wrap1">
+    <picker name="picker_hx" class="cybm_pic_1" data-id="{{pic_array[hx_index].id}}" value="{{pic_array[hx_index].name}}"
+        data-selecthxpicker="{{pic_array[hx_index].name}}" range="{{pic_array}}" range-key="{{'name'}}"
+        bindchange="bindPickerChange_hx">
+        <view class="picker1"> {{pic_array[hx_index].name}}
+        </view>
+      </picker>
+  </view>
+  <!-- 设备 -->
+  <view class="select-wrap1">
+    <picker name="picker_hx2" class="cybm_pic_1" data-id="{{pic_array2[hx_index2].id}}" value="{{pic_array2[hx_index2].name}}"
+        data-selecthxpicker="{{pic_array2[hx_index2].name}}" range="{{pic_array2}}" range-key="{{'name_ny'}}"
+        bindchange="bindPickerChange_hx2">
+        <view class="picker1"> {{pic_array2[hx_index2].name}}</view>
+        
+      </picker>
+  </view>
+  <!-- 点位 -->
+  <view class="select-wrap1">
+    <picker name="picker_hx3" class="cybm_pic_1" data-id="{{pic_array3[hx_index3].id}}" value="{{pic_array3[hx_index3].name}}"
+        data-selecthxpicker="{{pic_array3[hx_index3].name}}" range="{{pic_array3}}" range-key="{{'name'}}"
+        bindchange="bindPickerChange_hx3">
+        <view class="picker1"> {{pic_array3[hx_index3].name}}
+        </view>
+      </picker>
+  </view>
+
+
+  </view>
+
+
+  <view>
+    <view class="page">
+      <!-- 时间段 -->
+      <view class="picker_group">
+        <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+          <view class="picker">
+            {{date}}
+          </view>
+        </picker>
+        -
+        <picker mode="date" value="{{date2}}" end="2050-01-01" bindchange="bindDateChange2">
+          <view class="picker">
+            {{date2}}
+          </view>
+        </picker>
+        <view bindtap="sousuo" class="sou">搜索</view>
+      </view>
+    </view>
+  </view>
+
+
+
+  <!-- <view style="width:100%;height:500rpx;">
+    <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas"></canvas>
+  </view> -->
+
+  <view style="width: 91%;height:100%;margin-bottom:90rpx;margin: 0 auto;box-shadow: 0px 2px 4px 2px #DDDDDD;">
+    <chart chart-class="chart" option="{{ option }}"  ec="{{ ec }}"  width="675rpx" height="500rpx" bindinstance="onInstance" />
+  </view>
+
+
+</view>

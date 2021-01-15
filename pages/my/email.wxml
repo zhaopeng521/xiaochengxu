@@ -1,0 +1,43 @@
+<view class="container"> 
+
+<!-- <view class="area">  -->
+<!-- <image class="login-img" src="../../img/loginLog.jpg"></image>  --> 
+  <!-- <view class="area"></view> -->
+  <!-- 上海财税综合楼 -->
+<!-- </view>  -->
+
+
+<view class="login-from"> 
+
+<!--用户名-->
+<view class="names1">
+  <view class="names">邮箱:</view>
+  <view class="inputView"> 
+    <input class="inputText" placeholder="请输入邮箱号" bindinput="emailInput" /> 
+  </view> 
+</view>
+
+<!--新密码-->
+<!-- <view class="names1">
+<view class="names">新密码</view>
+<view class="inputView">
+ <input class="inputText" password="true" placeholder="请输入新密码" bindinput="passwordInput" /> 
+</view> 
+</view> -->
+
+<!--旧密码-->
+<!-- <view class="names1">
+<view class="names">旧密码</view>
+<view class="inputView">
+ <input class="inputText" password="true" placeholder="请输入新密码" bindinput="passwordInput" /> 
+</view> 
+</view> -->
+
+<!--确认-->
+<view class="loginBtnView"> 
+  <button class="loginBtn" bindtap="login">确认修改</button> 
+</view> 
+
+
+</view> 
+</view>

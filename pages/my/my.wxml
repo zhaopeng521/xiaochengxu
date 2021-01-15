@@ -1,0 +1,100 @@
+
+
+
+
+<view style="background-image: url('https://sagemaker-cn-north-1-914187595981.s3.cn-north-1.amazonaws.com.cn/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20201224170342.jpg');display: flex;width: 100%;height: 380rpx;align-items: center;">
+
+  <!-- <view class="" style="width:400rpx;margin:0 auto;text-algin:center;" wx:if="{{types==undefined||ge==0}}"> -->
+    <!-- <view class="header-bg bdr df aic jcc over">
+            <open-data class="header-bg bdr df aic jcc" style="margin:0 auto;" type="userAvatarUrl"></open-data>
+        </view>
+        <navigator hoverClass="none" openType="navigate" url="/hyb_yl/tel/tel">
+            <view style="height:60rpx;line-height:60rpx;margin:0 auto;">
+                <open-data class="w160 cf fs28" style="margin-left:150rpx;" type="userNickName"></open-data>
+                <text class="fs26 cf mt15" style="" wx:if="{{myphone.u_phone!==''}}">Tel：{{myphone.u_phone}}</text>
+            </view>
+        </navigator> -->
+    <view style="width:30%;">
+      <image style="border-radius: 50%;border: 4rpx solid #fff;display: block;width: 150rpx;height: 150rpx;margin: 0 auto;"  src="/tabbar/logos.png" mode="cover"></image>
+    </view>
+      <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称
+      </button> -->
+    <view style="width:65%;"> 
+      <view  style="color: #ffffff;font-size: 38rpx;font-weight: bold;">{{name}}</view>
+      <view  style="color: #ffffff;font-size: 34rpx;font-weight: bold;margin-top: 20rpx;">手机号：{{mobile}}</view>
+    </view>
+    
+    <view style="width:10%;" bindtap="xinxi"> 
+      <!-- <navigator url="/pages/my/information?title={{navigate}}&name={{name}}" hover-start-time='60' hover-class='none'> -->
+        <image style="display: block;width: 20rpx;height: 30rpx;margin: 30rpx auto;"  src="/tabbar/jinru.png" mode="cover"></image>
+      <!-- </navigator> -->
+    </view>
+  
+  <!-- </view> -->
+
+</view>
+
+<!-- <view class="container">
+  <view >
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <view wx:else class="userinfo" >
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </view>
+  </view>
+</view> -->
+
+<!-- 修改密码 -->
+<view class="serve">
+  <navigator url="/pages/my/passwords?title={{navigate}}&name={{name}}" hover-start-time='60' hover-class='none'>
+  <view class="serve-top">
+    <view class="serve-top1">
+      <image src="/tabbar/xiugai.png" style=""></image>
+    </view>
+    <view class="serve-title">修改密码</view>
+    <view bindtap="wodeguanzhu" class="more">
+      <image src="/tabbar/yjt.png"></image>
+    </view>
+  </view>
+</navigator>
+</view>
+
+<!-- 公司名称 -->
+<view class="serve2">
+  <navigator url="/pages/my/users?title={{navigate}}&name={{name}}" hover-start-time='60' hover-class='none'>
+  <view class="serve-top">
+    <view class="serve-top1">
+      <image src="/tabbar/gongsi.png" style=""></image>
+    </view>
+    <view class="serve-title">公司名称</view>
+    <view bindtap="huiyuan" class="more">
+      <image src="/tabbar/yjt.png"></image>
+    </view>
+  </view>
+  </navigator>
+</view>
+
+<!-- 邮箱 -->
+<view class="serve3">
+  <navigator url="/pages/my/email?title={{navigate}}&name={{name}}" hover-start-time='60' hover-class='none'>
+  <view class="serve-top">
+    <view class="serve-top1">
+      <image src="/tabbar/youxiang.png" style=""></image>
+    </view>
+    <view class="serve-title">邮箱</view>
+    <view bindtap="lianxiwomen" class="more">
+      <image src="/tabbar/yjt.png"></image>
+    </view>
+  </view>
+  </navigator>
+</view>
+
+<!-- 退出登录 -->
+<!-- <view style="background: #fff;width:100%;text-align: center;color:#E31010;font-size:36rpx;height: 120rpx;line-height: 120rpx;" bindtap="jie">
+  解绑账号
+</view> -->
+
+<!-- 退出登录 -->
+<view style="background: #fff;width:100%;text-align: center;color:#E31010;font-size:36rpx;margin-top:25rpx;height: 120rpx;line-height: 120rpx;" bindtap="tui">
+  退出登录
+</view>

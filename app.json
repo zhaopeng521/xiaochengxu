@@ -1,0 +1,75 @@
+{
+  "pages": [
+    "pages/indexs/indexs",
+    "pages/index/index",
+    "pages/Equipmentdetails/details",
+    "pages/alarm/alarm",
+    "pages/logs/logs",
+    "pages/login/login",
+    "pages/Equipmentdetails/Equipmentdetails",
+    "pages/historicaldata/historicaldata",
+    "pages/my/my",
+    "pages/my/users",
+    "pages/my/passwords",
+    "components/select",
+    "pages/my/email",
+    "pages/my/information",
+    "pages/Equipmentdetails/gengduo"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "plugins": {
+    "echarts": {
+      "version": "1.0.5",
+      "provider": "wx1db9e5ab1149ea03"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "航天小程序",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#393939",
+    "selectedColor": "#52B1FA",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "tabbar/11.png",
+        "selectedIconPath": "tabbar/1.png"
+      },
+      {
+        "pagePath": "pages/Equipmentdetails/Equipmentdetails",
+        "text": "设备详情",
+        "iconPath": "tabbar/22.png",
+        "selectedIconPath": "tabbar/2.png"
+      },
+      {
+        "pagePath": "pages/historicaldata/historicaldata",
+        "text": "历史数据",
+        "iconPath": "tabbar/33.png",
+        "selectedIconPath": "tabbar/3.png"
+      },
+      {
+        "pagePath": "pages/alarm/alarm",
+        "text": "告警",
+        "iconPath": "tabbar/44.png",
+        "selectedIconPath": "tabbar/4.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "账号管理",
+        "iconPath": "tabbar/55.png",
+        "selectedIconPath": "tabbar/5.png"
+      }
+    ]
+  },
+  "debug": true,
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

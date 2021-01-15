@@ -1,0 +1,19 @@
+<!-- 用户名 -->
+<view class="serve">
+  <!-- <navigator url="/pages/my/passwords?title={{navigate}}&name={{name}}" hover-start-time='60' hover-class='none'> -->
+  <view class="serve-top">
+    <view class="serve-title">用户名</view>
+    <view  class="more">{{name}}</view>
+  </view>
+<!-- </navigator> -->
+</view>
+
+<!-- 手机号 -->
+<view class="serve2">
+  <!-- <navigator url="/pages/my/users?title={{navigate}}&name={{name}}" hover-start-time='60' hover-class='none'> -->
+  <view class="serve-top">
+    <view class="serve-title">手机号</view>
+    <view  class="more">{{mobile}}</view>
+  </view>
+  <!-- </navigator> -->
+</view>

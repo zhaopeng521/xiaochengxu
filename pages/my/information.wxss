@@ -1,0 +1,63 @@
+/* pages/my/information.wxss */
+page{ 
+  height: 100%; 
+  background: #F5F5F5;
+ } 
+
+ .serve {
+  width: 100%;
+  padding: 0 20rpx;
+  background: #fff;
+  margin-top: 30rpx;
+}
+.serve2 {
+  width: 100%;
+  padding: 0 20rpx;
+  background: #fff;
+  /* margin-top: 50rpx; */
+}
+.serve3 {
+  width: 100%;
+  padding: 0 20rpx;
+  background: #fff;
+  margin-top: 50rpx;
+}
+.serve-top {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  height: 140rpx;
+  line-height: 140rpx;
+  /* padding: 0rpx 0rpx 30rpx 0rpx; */
+  border-bottom: 1rpx solid #efefef;
+}
+.serve-top1{
+  width: 10%;
+  display: block;
+  margin-top: 7rpx;
+}
+
+.serve-top1 image{
+width:35rpx;
+height:35rpx;
+}
+.serve-title {
+  width: 21%;
+  font-size: 35rpx;
+  color: #666666;
+  font-weight: 600;
+  /* line-height: 55rpx; */
+  /* text-overflow: ellipsis; */
+  /* overflow: hidden; */
+  /* white-space: nowrap; */
+}
+.more {
+  /* float: right; */
+  width: 73%;
+  /* font-size: 24rpx; */
+  /* color: #999; */
+  text-align: right;
+  color: #333333;
+  font-weight: 600;
+  /* margin-top: 10rpx; */
+}

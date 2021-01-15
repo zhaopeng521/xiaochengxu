@@ -1,0 +1,149 @@
+<!-- <view wx:if="{{isHide}}">
+    <view wx:if="{{canIUse}}" >
+        <view class='header'>
+            <image src='/tabbar/wx_login.png'></image>
+        </view>
+
+        <view class='content'>
+            <view>申请获取以下权限</view>
+            <text>获得你的公开信息(昵称，头像等)</text>
+        </view>
+
+        <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+            授权登录
+        </button>
+    </view>
+    <view wx:else>请升级微信版本</view>
+</view> -->
+
+
+
+
+
+
+
+
+
+<view>
+
+
+  <view
+    style="display:flex;background:#fff;height:114rpx;align-items:center;padding-left:30rpx;border-top: 2rpx #EEEEEE solid;">
+
+    <!-- 下拉框自定义 -->
+    <view class='select_box'>
+
+
+      <!-- 项目   //绑定的方式一样，只是改动一下变量名既可以了，这是比较简单的方式 -->
+      <picker name="picker_hx" class="cybm_pic_1" data-id="{{pic_array[hx_index].id}}"
+        value="{{pic_array[hx_index].name}}" data-selecthx="{{pic_array[hx_index].name}}" range="{{pic_array}}"
+        range-key="{{'name'}}" bindchange="bindPickerChange_hx">
+        <view class="picker"> {{pic_array[hx_index].name}}
+          <!-- //指定数组中指定下标的name键对应的值  -->
+          <!-- <image class='select_imgs {{show&&"select_imgs_rotate"}}' src='/tabbar/xl.png'></image> -->
+        </view>
+      </picker>
+
+
+    </view>
+    <!-- 下拉框自定义 -->
+
+
+
+    <view style="width: 66%;display:flex;justify-content: flex-end;align-items: center;">
+      <view style="color: #666666;font-size: 38rpx;font-weight: 500;">设备总数:</view>
+      <view style="color: #333333;font-size: 38rpx;font-weight: 600;margin:0 20rpx 0 10rpx;">{{arrgy.length}}</view>
+    </view>
+  </view>
+
+
+  <!-- <view class='nav'>
+  <view class="{{selected?'orange':'default'}}" data-w='w' bindtap='select'>中国全境</view>
+  <view class="{{selecte?'orange':'default'}}" data-y='y' bindtap='select'>上海市</view>
+
+    <input  class="Search_Input" focus="{{name_focus}}" placeholder='静安区江场路1398号' bindinput='inputvalue' value="{{input_value}}"></input>
+
+</view> -->
+
+  <!-- 中国 -->
+  <!-- <view class="{{selected?'show':'hidden'}}">
+<view class="listbox" > -->
+
+  <view class="page-body">
+    <view class="page-section page-section-gap">
+
+
+      
+      <map id="myMap" style="width: 100%; height: 520rpx;" latitude="{{latitude}}" longitude="{{longitude}}" scale="5" markers="{{markers}}" covers="{{covers}}" show-location></map>
+
+
+    </view>
+  </view>
+  <!-- 
+</view>
+</view> -->
+
+
+
+  <!-- 上海 -->
+  <!-- <view class="{{selecte?'show':'hidden'}}">
+<view class="listbox" >
+
+  <view class="page-body">
+  <view class="page-section page-section-gap">
+    <map id="myMap" style="width: 100%; height: 480rpx;" latitude="{{latitude}}" longitude="{{longitude}}"
+      markers="{{markers}}" covers="{{covers}}" show-location></map>
+  </view>
+</view>
+
+</view>
+</view> -->
+
+
+  <view class="tong" style="padding:30rpx;">
+
+    <view class="tong1" bindtap="tiao1">
+      <image src='/tabbar/indexyunxing.png' class="tongimg"></image>
+      <view class="tong2">
+        {{newArray.length}}
+      </view>
+      <view class="tong3">
+        运行设备数
+      </view>
+    </view>
+
+    <view class="tong1" bindtap="tiao4">
+      <image src='/tabbar/indexbaojing.png' class="tongimg"></image>
+      <view class="tong2" style="color:#E38010;">
+        {{newArray3.length}}
+      </view>
+      <view class="tong3">
+        报警设备数
+      </view>
+    </view>
+
+    <view class="tong1" bindtap="tiao3">
+      <image src='/tabbar/indexdaiji.png' class="tongimg"></image>
+      <view class="tong2">
+        {{newArray4.length}}
+      </view>
+      <view class="tong3">
+        待机设备数
+      </view>
+    </view>
+
+    <view class="tong1" bindtap="tiao2">
+      <image src='/tabbar/indexlixian.png' class="tongimg"></image>
+      <view class="tong2" style="color:#F53131;">
+        {{newArray2.length}}
+      </view>
+      <view class="tong3">
+        离线设备数
+      </view>
+    </view>
+
+  </view>
+
+
+
+</view>

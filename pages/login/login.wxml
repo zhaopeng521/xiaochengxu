@@ -1,0 +1,38 @@
+<view class="container"> 
+
+<view class="area"> 
+  <view>
+    <image class="login-img" src="/tabbar/logos.png"></image>
+    <view>航天小程序</view>
+  </view>  
+  <!-- <view class="area"></view> -->
+  
+</view> 
+
+
+<view class="login-from"> 
+
+<!--账号-->
+<view class="inputView"> 
+ <input class="inputText" placeholder="用户名" bindinput="usernameInput" /> 
+</view> 
+
+<!--密码-->
+<view class="inputView"> 
+ <input class="inputText" password="true" placeholder="输入密码" bindinput="passwordInput" /> 
+</view> 
+
+<!--按钮-->
+<view class="loginBtnView"> 
+  <!-- <view class="logi1" bindtap="fang">
+    访客登录
+  </view> -->
+  <view class="logi2" bindtap="login">
+    登录
+  </view>
+   
+  
+</view> 
+
+</view> 
+</view>

@@ -1,0 +1,282 @@
+
+
+<wxs src="./data.wxs" module="data" />
+<!-- 搜索框 -->
+<view style="width:100%;height:128rpx;background:#fff;display:flex;">
+
+  <view class="containers" bindtap="close">
+    <!-- 项目   //绑定的方式一样，只是改动一下变量名既可以了，这是比较简单的方式 -->
+    <picker name="picker_hx" class="cybm_pic_1" data-id="{{pic_array[hx_index].id}}" value="{{pic_array[hx_index].name}}"
+        data-selecthx="{{pic_array[hx_index].name}}" range="{{pic_array}}" range-key="{{'name'}}"
+        bindchange="bindPickerChange_hx">
+        <view class="picker"> {{pic_array[hx_index].name}}
+          <!-- //指定数组中指定下标的name键对应的值  -->
+          <!-- <image class='select_imgs {{show&&"select_imgs_rotate"}}' src='/tabbar/xl.png'></image> -->
+        </view>
+      </picker>
+  </view>
+
+  <view class="inputsearch">
+    <input bindinput="searchDevices" placeholder-style="color:#383838;" class="search__input"
+      name="teamSearchKeyWords" placeholder="请输入产品名称/编号" value="{{searchValue}}"></input>
+    <view class="search__icon search__active">
+      <icon color="#cccccc" size="17"  type="search"></icon>
+    </view>
+  </view>
+</view>
+
+
+
+<!-- 选项卡 -->
+<view class='nav'>
+    <view class="{{selected?'orange':'default'}}" data-w='w' bindtap='select'>
+      <view style="width:60%;color:#999999;">全部:</view>
+        <view style="width:50%;padding-left: 6rpx;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;color:#999999;">{{allArr.length}}</view>
+    </view>
+
+    <view class="{{selecte?'orange':'default'}}" data-y='y' bindtap='select'>
+        <view style="width:60%;color:#999999;">运行:</view>
+        <view style="width:50%;padding-left: 6rpx;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;color:#999999;">{{newArray.length}}</view>
+    </view>
+
+    <view class="{{selec?'orange':'default'}}" data-z='z' bindtap='select'>
+        <view style="width:60%;color:#999999;">待机:</view>
+        <view style="width:50%;padding-left: 6rpx;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;color:#999999;">{{newArray4.length}}</view>
+    </view>
+
+    <view class="{{sele?'orange':'default'}}" data-f='f' bindtap='select'>
+        <view style="width:60%;color:#999999;">故障:</view>
+        <view style="width:50%;padding-left: 6rpx;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;color:#999999;">{{newArray3.length}}</view>
+    </view>
+
+    <view class="{{sel?'orange':'default'}}" data-p='p' bindtap='select'>
+        <view style="width:60%;color:#999999;">离线:</view>
+        <view style="width:50%;padding-left: 6rpx;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;color:#999999;">{{newArray2.length}}</view>
+    </view>
+</view>
+
+
+
+
+<view class="serve">
+
+  <!-- 全部 -->
+  <view  class="{{selected?'show':'hidden'}}">
+
+
+    <!-- 全部 -->
+    <view class="serve-bottom">
+        <view class="expert-list" bindsubmit="saveFormId" data-id="{{item.id}}" reportSubmit="{{true}}" wx:for="{{allArr}}" bindtap="xiangqing" data-item="{{item}}" wx:key="*this">
+          <view class="expert-list-left">
+            <image src="/tabbar/fengjitu.jpg"></image>
+          </view>
+          <view class="expert-list-right">
+            <view class="expert-name">
+              <view class="box1">
+                <view style="font-size: 36rpx;font-weight: 600;color: #000;width: 85%;">{{item.name}}</view>          
+                <view class="{{statusColor[item.status]}}">{{item.status}}</view>
+              </view>
+            </view>
+            <view class="expert-num">
+              <view>
+                <text style="#666666" wx:if="{{item.type == null}}">产品系列：无</text>
+                <text style="#666666" wx:else>产品系列：{{item.type}}</text>
+              </view>
+            </view>
+            <view class="expert-num">
+              <view>
+                <text style="#666666" wx:if="{{item.device_num == null}}">产品编号：无</text>
+                <text style="#666666" wx:else>产品编号：{{item.device_num}}</text>
+              </view>
+            </view>
+            <view class="expert-num">
+              <view>
+                <text style="#666666" wx:if="{{item.address == null}}">安装地址：无</text>
+                <text style="#666666" wx:else>安装地址：{{item.address}}</text>
+              </view>
+              <view>
+                <text style="#666666" wx:if="{{item.install_time_data == null}}">安装时间：无</text>
+                <text style="#666666" wx:else>安装时间：{{item.install_time_data}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+    </view>
+
+
+  </view>
+  <!-- 全部 -->
+
+
+  <!-- 运行 -->
+  <view  class="{{selecte?'show':'hidden'}}">
+  <view class="serve-bottom">
+        <view class="expert-list" bindsubmit="saveFormId" data-id="{{item.id}}" reportSubmit="{{true}}" wx:for="{{newArray}}" bindtap="xiangqing"  data-item="{{item}}" wx:key="*this">
+          <view class="expert-list-left">
+            <image src="/tabbar/fengjitu.jpg"></image>
+          </view>
+          <view class="expert-list-right">
+            <view class="expert-name">
+              <view class="box1">
+                <view style="font-size: 36rpx;font-weight: 600;color: #000;width: 85%;">{{item.name}}</view>          
+                <view class="boxs1">{{item.status}}</view>
+              </view>
+            </view>
+            <view class="expert-num">
+              <view>
+                <text style="#666666" wx:if="{{item.type == null}}">产品系列：无</text>
+                <text style="#666666" wx:else>产品系列：{{item.type}}</text>
+              </view>
+            </view>
+            <view class="expert-num">
+              <view>
+                <text style="#666666" wx:if="{{item.device_num == null}}">产品编号：无</text>
+                <text style="#666666" wx:else>产品编号：{{item.device_num}}</text>
+              </view>
+            </view>
+            <view class="expert-num">
+              <view>
+                <text style="#666666" wx:if="{{item.address == null}}">安装地址：无</text>
+                <text style="#666666" wx:else>安装地址：{{item.address}}</text>
+              </view>
+              <view>
+                <text style="#666666" wx:if="{{item.install_time_data == null}}">安装时间：无</text>
+                <text style="#666666" wx:else>安装时间：{{item.install_time_data}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+  </view>
+  </view>
+  <!-- 运行 -->
+
+
+  <!-- 离线 -->
+  <view  class="{{sel?'show':'hidden'}}">
+  <view class="serve-bottom">
+        <view class="expert-list1" bindsubmit="saveFormId" data-id="{{item.id}}" reportSubmit="{{true}}" wx:for="{{newArray2}}" bindtap="xiangqing"  data-item="{{item}}" wx:key="*this">
+          <view class="expert-list-left">
+            <image src="/tabbar/fengjitu.jpg"></image>
+          </view>
+          <view class="expert-list-right">
+            <view class="expert-name">
+              <view class="box1">
+                <view style="font-size: 36rpx;font-weight: 600;color: #000;width: 85%;">{{item.name}}</view>          
+                <view class="boxs2">{{item.status}}</view>
+              </view>
+            </view>
+            <view class="expert-num">
+              <view>
+                <text style="#666666" wx:if="{{item.type == null}}">产品系列：无</text>
+                <text style="#666666" wx:else>产品系列：{{item.type}}</text>
+              </view>
+            </view>
+            <view class="expert-num">
+              <view>
+                <text style="#666666" wx:if="{{item.device_num == null}}">产品编号：无</text>
+                <text style="#666666" wx:else>产品编号：{{item.device_num}}</text>
+              </view>
+            </view>
+            <view class="expert-num">
+              <view>
+                <text style="#666666" wx:if="{{item.address == null}}">安装地址：无</text>
+                <text style="#666666" wx:else>安装地址：{{item.address}}</text>
+              </view>
+              <view>
+                <text style="#666666" wx:if="{{item.install_time_data == null}}">安装时间：无</text>
+                <text style="#666666" wx:else>安装时间：{{item.install_time_data}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+  </view>
+  </view>
+  <!-- 离线 -->
+
+
+  <!-- 故障 -->
+  <view class="{{sele?'show':'hidden'}}">
+  <view class="serve-bottom">
+        <view class="expert-list1" bindsubmit="saveFormId" data-id="{{item.id}}" reportSubmit="{{true}}" wx:for="{{newArray3}}" data-item="{{item}}" bindtap="xiangqing" wx:key="*this">
+          <view class="expert-list-left">
+            <image src="/tabbar/fengjitu.jpg"></image>
+          </view>
+          <view class="expert-list-right">
+            <view class="expert-name">
+              <view class="box1">
+                <view style="font-size: 36rpx;font-weight: 600;color: #000;width: 85%;">{{item.name}}</view>          
+                <view class="boxs3">{{item.status}}</view>
+              </view>
+            </view>
+            <view class="expert-num">
+              <view>
+                <text style="#666666" wx:if="{{item.type == null}}">产品系列：无</text>
+                <text style="#666666" wx:else>产品系列：{{item.type}}</text>
+              </view>
+            </view>
+            <view class="expert-num">
+              <view>
+                <text style="#666666" wx:if="{{item.device_num == null}}">产品编号：无</text>
+                <text style="#666666" wx:else>产品编号：{{item.device_num}}</text>
+              </view>
+            </view>
+            <view class="expert-num">
+              <view>
+                <text style="#666666" wx:if="{{item.address == null}}">安装地址：无</text>
+                <text style="#666666" wx:else>安装地址：{{item.address}}</text>
+              </view>
+              <view>
+                <text style="#666666" wx:if="{{item.install_time_data == null}}">安装时间：无</text>
+                <text style="#666666" wx:else>安装时间：{{item.install_time_data}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+  </view>
+  </view>
+  <!-- 故障 -->
+
+
+  <!-- 待机 -->
+  <view class="{{selec?'show':'hidden'}}">
+  <view class="serve-bottom">
+        <view class="expert-list1" bindsubmit="saveFormId" data-id="{{item.id}}" bindtap="xiangqing" reportSubmit="{{true}}" wx:for="{{newArray4}}" wx:key="*this" data-item="{{item}}">
+          <view class="expert-list-left">
+            <image src="/tabbar/fengjitu.jpg"></image>
+          </view>
+          <view class="expert-list-right">
+            <view class="expert-name">
+              <view class="box1">
+                <view style="font-size: 36rpx;font-weight: 600;color: #000;width: 85%;">{{item.name}}</view>          
+                <view class="boxs4">{{item.status}}</view>
+              </view>
+            </view>
+            <view class="expert-num">
+              <view>
+                <text style="#666666" wx:if="{{item.type == null}}">产品系列：无</text>
+                <text style="#666666" wx:else>产品系列：{{item.type}}</text>
+              </view>
+            </view>
+            <view class="expert-num">
+              <view>
+                <text style="#666666" wx:if="{{item.device_num == null}}">产品编号：无</text>
+                <text style="#666666" wx:else>产品编号：{{item.device_num}}</text>
+              </view>
+            </view>
+            <view class="expert-num">
+              <view>
+                <text style="#666666" wx:if="{{item.address == null}}">安装地址：无</text>
+                <text style="#666666" wx:else>安装地址：{{item.address}}</text>
+              </view>
+              <view>
+                <text style="#666666" wx:if="{{item.install_time_data == null}}">安装时间：无</text>
+                <text style="#666666" wx:else>安装时间：{{item.install_time_data}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+  </view>
+  </view>
+  <!-- 待机 -->
+
+</view>

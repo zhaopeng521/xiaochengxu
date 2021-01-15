@@ -1,0 +1,145 @@
+<view  style="{{all_roles[0] == '访客' ?'display:none':'display:block'}}">
+  <view class="containers">
+    
+  <!-- 项目 -->
+  <view class="select-wrap1">
+    <picker name="picker_hx" class="cybm_pic_1" data-id="{{pic_array[hx_index].id}}" value="{{pic_array[hx_index].name}}"
+        data-selecthxpicker="{{pic_array[hx_index].name}}" range="{{pic_array}}" range-key="{{'name'}}"
+        bindchange="bindPickerChange_hx">
+        <view class="picker1"> {{pic_array[hx_index].name}}
+        </view>
+      </picker>
+  </view>
+  
+  <!-- 产品 -->
+  <view class="select-wrap1">
+    <picker name="picker_hx2" class="cybm_pic_1" data-id="{{pic_array2[hx_index2].id}}" value="{{pic_array2[hx_index2].name}}"
+        data-selecthxpicker="{{pic_array2[hx_index2].name}}" range="{{pic_array2}}" range-key="{{'name'}}"
+        bindchange="bindPickerChange_hx2">
+        <view class="picker1"> {{pic_array2[hx_index2].name}}
+        </view>
+      </picker>
+  </view>
+
+  <!-- 状态 -->
+  <view class="select-wrap1">
+    <picker name="picker_hx3" class="cybm_pic_1" data-id="{{pic_array3[hx_index3].id}}" value="{{pic_array3[hx_index3].name}}"
+        data-selecthxpicker="{{pic_array3[hx_index3].name}}" range="{{pic_array3}}" range-key="{{'name'}}"
+        bindchange="bindPickerChange_hx3">
+        <view class="picker1"> {{pic_array3[hx_index3].name}}
+        </view>
+      </picker>
+  </view>
+
+  </view>
+
+
+  <view>
+
+    <view class="page">
+      <!-- 时间段 -->
+      <view class="picker_group">
+        <picker mode="date" value="{{date}}" end="{{date}}" bindchange="bindDateChange">
+          <view class="picker">
+            {{date}}
+          </view>
+        </picker>
+        -
+        <picker mode="date" value="{{date2}}" start="{{date2}}" end="2050-01-01" bindchange="bindDateChange2">
+          <view class="picker">
+            {{date2}}
+          </view>
+        </picker>
+
+        <view bindtap="sousuo" class="sou">搜索</view>
+      </view>
+    </view>
+
+  </view>
+
+
+
+  <!-- 告警信息 -->
+  <!-- <view class="{{selected?'show':'hidden'}}"> -->
+  <view class="listbox">
+
+    <view style="width:100%;margin-top:30rpx;">
+
+      <view class="tong">
+        <view class="tongj" wx:for="{{dataList1}}" wx:key="index">
+          <view style="display:flex;align-items: center;margin-bottom: 20rpx;">
+            <view class="tongj2">{{item.device.name}}</view>
+            <view class="tongj1">{{item.point}}</view>
+          </view>
+          
+          
+
+          
+          <view class="tongj4">产品编号：{{item.device.device_num}}</view>
+          <view class="tongj4">产品系列：{{item.device.type}}</view>
+          <view class="tongj4">报警内容：{{item.content}}</view>
+          <view class="tongj4">详细地址：{{item.device.address}}</view>
+          <view class="tongj4">报警时间：{{item.create_time}}</view>
+
+          <view class="tongj4">自动恢复时间：<text wx:if="{{item.automatic_recovery_time !== null}}">{{item.automatic_recovery_time}}</text></view>
+          <!-- <view class="tongj4">自动恢复时间：<text style="color:red;" wx:if="{{item.automatic_recovery_time == null}}">尚未自动恢复</text></view> -->
+
+          <view style="display:flex;align-items: center;">
+            <view style="width:70%;"> 
+              <view class="tongjs4" wx:if="{{item.username == null}}">报警处理人：无</view>
+              <view class="tongjs4" wx:if="{{item.in_hand_time == null}}">开始处理时间：无</view>
+              <view class="tongjs4" wx:if="{{item.complete_times == null}}">处理完成时间：无</view>
+            </view>
+            
+            <view style="width:30%;margin-top: 45rpx;">
+              <view class="tongj3" style="background:#FE2E2E;" data-item="{{item}}" bindtap='name' wx:if="{{item.status ==0}}">去处理</view>
+              <view class="tongj3" style="background:#1074E3;" data-item="{{item}}" bindtap='name2' wx:if="{{item.status ==1}}">处理中</view>
+              <view class="tongj3" style="background:#06AC85;" data-item="{{item}}" wx:if="{{item.status ==2}}">已处理</view>
+            </view>
+            
+
+          </view>
+
+
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- </view> -->
+
+
+
+
+  <!-- 处理遮罩 -->
+  <view class="alertshop-box  hide{{showView? '' : 'show'}}" bindtap='hiddenshop'></view>
+  <view class="bigbox  hide{{showView? '' : 'show'}}">
+    <view class="hidebox2  hide{{showView? '' : 'show'}}">
+      <view class='gai' style="font-weight: 600;">提示</view>
+      <view
+        style="height:100rpx;line-height:100rpx;text-align:center;margin-bottom: 20rpx;font-weight: 600;color:#999999;">
+        是否确定去处理 ？</view>
+      <view class='quang' style="border-top:2rpx solid #ccc;">
+        <text style='border-right: 2rpx solid #ccc;font-weight: 600;border-right-style: groove;color:#333;'
+          bindtap='userq'>取消</text>
+        <text style='color:#0983f6;font-weight: 600;' bindtap='userque'>确定</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 处理完成遮罩 -->
+  <view class="alertshop-box  hide{{showall? '' : 'show'}}" bindtap='hiddenshop'></view>
+  <view class="bigbox  hide{{showall? '' : 'show'}}">
+    <view class="hidebox2  hide{{showall? '' : 'show'}}">
+      <view class='gai' style="font-weight: 600;">提示</view>
+      <view
+        style="height:100rpx;line-height:100rpx;text-align:center;margin-bottom: 20rpx;font-weight: 600;color:#999999;">
+        是否确定处理完成 ？</view>
+      <view class='quang' style="border-top:2rpx solid #ccc;">
+        <text style='border-right: 2rpx solid #ccc;font-weight: 600;border-right-style: groove;color:#333;'
+          bindtap='userq2'>取消</text>
+        <text style='color:#0983f6;font-weight: 600;' bindtap='userque2'>确定</text>
+      </view>
+    </view>
+  </view>
+
+</view>

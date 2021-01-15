@@ -1,0 +1,78 @@
+<!--pages/Equipmentdetails/gengduo.wxml-->
+<view style="width: 100%;min-height: 500px;">
+
+<!-- <view class='nav'>
+  <view>数据信息</view>
+  <view >图表模式</view>
+</view> -->
+
+<!-- 告警信息 -->
+<!-- <view class="{{selected?'show':'hidden'}}"> -->
+
+<!-- 图表遮罩 -->
+<!-- <view class="alertshop-box  hide{{showView? '' : 'show'}}" bindtap='hiddenshop'></view>
+<view class="bigbox  hide{{showView? '' : 'show'}}">
+  <view class="hidebox2  hide{{showView? '' : 'show'}}">
+    <view class='gai' style="font-weight: 600;">图表信息</view>
+    <view>
+      <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas"></canvas>
+    </view>
+    <view class='quang'>
+      <text style='font-weight: 600;color:#333;' bindtap='userq'>取消</text>
+    </view>
+  </view>
+</view> -->
+<!-- </view> -->
+<!-- 图表遮罩 -->
+
+<view >
+
+
+
+<view class="listbox">
+
+  <view style="width:100%;margin-top:30rpx;margin-bottom: 30rpx;">
+
+    <view style="display:flex;">
+      <view
+      style="width: 20%;height: 55px;line-height: 55px;font-size: 19px;font-weight: 600;padding-left: 13px;color: #fff;background: #1074e3;border-top-left-radius: 20rpx;border-top-right-radius: 20rpx;margin-left: 32rpx;"  class="{{selected?'orange':'default'}}" data-w='w' bindtap='select'>
+      更多数据
+      </view>
+
+    </view>
+
+   
+
+
+    <!-- echarts图表 -->
+    <!-- <view style="width: 91%;height:100%;margin-bottom:90rpx;margin: 0 auto;box-shadow: 0px 2px 4px 2px #DDDDDD;">
+      <chart chart-class="chart" option="{{ option }}" width="675rpx" height="500rpx" bindinstance="onInstance" />
+    </view> -->
+
+
+
+
+    <view
+      style="width: 91%; margin-bottom: 10px;margin: 0 auto;background: #1074E3;border-top-right-radius: 20rpx;border-bottom-left-radius: 20rpx;border-bottom-right-radius: 20rpx;box-shadow:0px 2px 4px 2px #DDDDDD;">
+      <view style="background:#F5F5F5;width:100%;height:100rpx;line-height:100rpx;display:flex;"
+        wx:for="{{detailslist1}}" wx:key="*this">
+        <view style="width:70%;padding-left:20rpx;color:#666666;">{{item.name}}<text
+            style="display: inline-block;width: 60rpx;text-align: center;font-size:30rpx;color:#cccccc;">{{item.unit}}</text>
+        </view>
+        <view
+          style="width:25%;text-align:center;color: #333333;font-size: 32rpx;">
+          {{item.value}}</view>
+      </view>
+
+    </view>
+
+  </view>
+
+</view>
+</view>
+<!-- </view> -->
+
+
+
+
+</view>

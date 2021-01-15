@@ -1,0 +1,104 @@
+<view style="width: 100%;min-height: 500px;">
+
+  <!-- <view class='nav'>
+    <view class="{{selected?'orange':'default'}}" data-w='w' bindtap='select'>数据信息</view>
+    <view class="{{selecte?'orange':'default'}}" data-y='y' bindtap='select'>图表模式</view>
+  </view> -->
+
+  <!-- 告警信息 -->
+  <!-- <view class="{{selected?'show':'hidden'}}"> -->
+
+  <!-- 图表遮罩 -->
+  <!-- <view class="alertshop-box  hide{{showView? '' : 'show'}}" bindtap='hiddenshop'></view>
+  <view class="bigbox  hide{{showView? '' : 'show'}}">
+    <view class="hidebox2  hide{{showView? '' : 'show'}}">
+      <view class='gai' style="font-weight: 600;">图表信息</view>
+      <view>
+        <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas"></canvas>
+      </view>
+      <view class='quang'>
+        <text style='font-weight: 600;color:#333;' bindtap='userq'>取消</text>
+      </view>
+    </view>
+  </view> -->
+  <!-- </view> -->
+  <!-- 图表遮罩 -->
+
+  <view class='nav'>
+        <view
+        style="font-weight: 600;" class="{{selected?'orange':'default'}}" data-w='w' bindtap='select'>
+        运行数据
+      </view>
+
+      <view
+        style="font-weight: 600;" class="{{selecte?'orange':'default'}}" data-y='y' bindtap='select' wx:if="{{detailslist2.length !== 0 }}">
+        更多数据
+      </view>
+
+      </view>
+
+  <view class="{{selected?'show':'hidden'}}">
+
+
+ 
+  <!-- <view class="listbox"> -->
+
+    <view style="width:100%;margin-bottom: 30rpx;">
+
+      <!-- echarts图表 -->
+      <view style="width: 91%;height:100%;margin-bottom:90rpx;margin: 0 auto;box-shadow: 0px 2px 4px 2px #DDDDDD;">
+        <chart chart-class="chart" option="{{ option }}" width="675rpx" height="500rpx" bindinstance="onInstance" />
+      </view>
+
+
+
+
+      <view
+        style="width: 91%; margin-bottom: 10px;margin: 0 auto;background: #1074E3;border-top-right-radius: 20rpx;border-bottom-left-radius: 20rpx;border-bottom-right-radius: 20rpx;box-shadow:0px 2px 4px 2px #DDDDDD;">
+        <view style="background:#F5F5F5;width:100%;height:100rpx;line-height:100rpx;display:flex;"
+          wx:for="{{detailslist1}}" wx:key="*this">
+          <view style="width:70%;padding-left:20rpx;color:#666666;">{{item.name}}<text
+              style="display: inline-block;width: 60rpx;text-align: center;font-size:30rpx;color:#cccccc;">{{item.unit}}</text>
+          </view>
+          <view
+            style="width:25%;text-align:center;color: #333333;font-size: 32rpx;">
+            {{item.value}}</view>
+        </view>
+        
+        <!--跑马灯 Linyufan.com-->
+        <view hidden = "{{ zmdArr.length==0 }}" class="marquee_container" style="--marqueeWidth--:-12em">
+            <!-- <view class="marquee_text">一个人活着就是为了让更多的人更好的活着！</view> -->
+            <view class="marquee_text"><text style="margin-right:20px" wx:for="{{zmdArr}}">{{item.point}}</text></view>
+        </view>
+      </view>
+
+    </view>
+
+  <!-- </view> -->
+</view>
+  <!-- </view> -->
+
+
+
+  <!-- 维保记录 -->
+  <view class="{{selecte?'show':'hidden'}}">
+    <view class="listbox">
+      <view
+        style="width: 91%; margin-bottom: 10px;margin: 0 auto;background: #1074E3;border-top-right-radius: 20rpx;border-bottom-left-radius: 20rpx;border-bottom-right-radius: 20rpx;box-shadow:0px 2px 4px 2px #DDDDDD;">
+        <view style="background:#F5F5F5;width:100%;height:100rpx;line-height:100rpx;display:flex;"
+          wx:for="{{detailslist2}}" wx:key="*this">
+          <view style="width:70%;padding-left:20rpx;color:#666666;">{{item.name}}<text
+              style="display: inline-block;width: 60rpx;text-align: center;font-size:30rpx;color:#cccccc;">{{item.unit}}</text>
+          </view>
+          <view
+            style="width:25%;text-align:center;color: #333333;font-size: 32rpx;">
+            {{item.value}}</view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+
+
+  
+</view>

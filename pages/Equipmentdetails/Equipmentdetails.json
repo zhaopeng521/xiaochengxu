@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "select": "/components/select"
+  },
+  "navigationBarTitleText": "设备详情",
+  "enablePullDownRefresh": true,
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#1074E3"
+}

@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "chart": "plugin://echarts/chart"
+  },
+  "enablePullDownRefresh": true,
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#1074E3",
+  "navigationBarTitleText": "历史数据"
+}

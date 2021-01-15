@@ -1,0 +1,24 @@
+<!-- <view wx:if="{{isHide}}">
+    <view wx:if="{{canIUse}}" >
+        <view class='header'>
+            <image src='/tabbar/logos.png'></image>
+        </view>
+
+        <view class='content'>
+            <view>欢迎进入航天小程序</view>
+            <text>是否进入</text>
+        </view>
+
+        <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+            授权登录
+        </button>
+    </view>
+    <view wx:else>请升级微信版本</view>
+</view>
+ -->
+
+
+ <view style="background-image: url('../../tabbar/bei.png');width: 100%;height: 100%;align-items: center;"> 
+
+
+ </view>

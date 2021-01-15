@@ -1,0 +1,7 @@
+{
+  "usingComponents": {},
+  "enablePullDownRefresh": true,
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#1074E3",
+  "navigationBarTitleText": "账号管理"
+}
